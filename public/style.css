@@ -1,0 +1,517 @@
+
+body {
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.container {
+    text-align: center;
+}
+
+.logo {
+    margin-bottom: 20px;
+}
+
+.box {
+    background-color: rgba(198, 231, 245, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.title {
+    color: #4B6E7D;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.inputbox input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    background-color: transparent;
+    transition: border-color 0.3s;
+}
+
+.inputbox input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.btn {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.btn-secondary {
+    background-color: #6B9DB3;
+    border-color: #6B9DB3;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+p {
+    margin-top: 20px;
+    color: #333;
+}
+
+
+@font-face {
+    font-family: 'dancingscript';
+    src: url('./Dancing_Script/DancingScript-VariableFont_wght.ttf');
+}
+
+* {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+
+
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: rgb(31, 30, 30);
+    position: fixed;
+    width: 100%;
+    background-color: #e6e1e1;
+    color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    float: right;
+}
+
+nav li {
+    display: inline-block;
+    font-size: 1.3rem;
+    color: rgb(174, 43, 87);
+}
+
+nav li a {
+    text-decoration: none;
+    color: rgb(174, 43, 87);
+    margin: 0px 15px 0px 15px;
+}
+
+nav a:hover {
+    background-color: white;
+    padding: 1.35rem 1rem;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-container {
+    flex: 1;
+}
+
+.logo-container img {
+    max-width: 150px;
+    /* Adjust logo size as needed */
+    height: auto;
+}
+
+main {
+    padding: 80px;
+}
+
+#brandName {
+    /* float: left; */
+    color: rgb(23, 12, 15);
+    font-size: 2rem;
+    margin: 1rem 5rem;
+    padding: 0;
+    font-family: 'dancingscript';
+}
+
+.brand-section {
+    display: flex;
+    align-items: center;
+}
+
+.brand-main-image {
+    flex: 1;
+    margin: 20px;
+}
+
+.brand-main-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.brand-details {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.brand-details h1 {
+    font-size: 24px;
+    margin: 1rem 5rem;
+    /* margin-bottom: 10px; */
+}
+
+.brand-details p {
+    font-size: 16px;
+    margin: 1rem 5rem;
+}
+
+.collections-section {
+    margin-top: 30px;
+}
+
+.store-body {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.collections-container {
+    width: 100%;
+    /* padding: 20px 40px; */
+}
+
+.collection {
+    margin-bottom: 30px;
+}
+
+/* .product {
+    width: 200px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+} */
+.product {
+    display: inline-block;
+    width: calc(30% - 20px);
+    margin: 40px 30px;
+    vertical-align: top;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fff;
+    text-align: center;
+    /* Center the content horizontally */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; */
+}
+
+/* Add left margin to the first product in each row */
+.product:nth-child(3n - 2) {
+    margin-left: 20px;
+}
+
+/* Add right margin to the third product in each row */
+.product:nth-child(3n) {
+    margin-right: 20px;
+}
+
+
+/* Clear the float every third product */
+.product:nth-child(3n + 1) {
+    clear: none;
+    /* Clear float removed */
+}
+
+
+.product img {
+    width: 200px;
+    /* Set a fixed width */
+    height: 150px;
+    /* Set a fixed height */
+    object-fit: cover;
+    /* Maintain aspect ratio and cover the entire space */
+    border-radius: 5px;
+    /* Add rounded corners for aesthetics */
+}
+
+.collection h2 {
+    text-align: center;
+}
+
+
+.product h3 {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.product p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+.store-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.store-header img {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+.store-info {
+    flex-grow: 1;
+}
+
+.store-body {
+    display: flex;
+}
+
+.store-body img {
+    flex-grow: 1;
+    max-width: 400px;
+    height: auto;
+    margin-left: 20px;
+}
+
+.collections-container {
+    margin-top: 20px;
+}
+
+.collection {
+    background-color: #FFFFFF;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.collection h2 {
+    margin-top: 0;
+}
+
+.features>.container {
+    padding: 0;
+    margin: 1rem;
+    border: none;
+    overflow: auto;
+    color: rgb(174, 43, 87);
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    margin: 4rem 0rem;
+    justify-content: center;
+}
+
+.col {
+    padding: 0;
+    margin: 0 3rem;
+    display: block;
+}
+
+.col>.content {
+    /* border: 0.3rem solid  rgb(174, 43, 87); */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+    padding: 1.5rem;
+    color: black;
+}
+
+.col>.icon {
+    padding: 1rem;
+}
+
+.features h1 {
+    font-size: 2.7rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+.aboutus {
+    display: flex;
+    padding: 10px 20px;
+    padding-left: 0px;
+    border: 2px solid #510d0f;
+    justify-content: center;
+    overflow: hidden;
+    max-height: 440px;
+}
+
+.aboutus img {
+    margin: 20px 30px;
+    border-radius: 70%;
+    border: 2px solid #510d0f;
+    width: 370px;
+}
+
+.About {
+    padding: 100px 70px;
+    margin-right: 20px;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    color: #510d0f;
+    text-align: center;
+    margin-right: 20px;
+
+}
+
+.About p {
+    font-size: large;
+}
+
+.contact {
+    padding: 2rem;
+
+}
+
+.contact h3 {
+    text-align: center;
+    color: black;
+    font-size: xx-large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.contact p {
+    text-align: center;
+    font-size: large;
+}
+
+fieldset {
+    width: 10rem;
+    height: 18rem;
+    border: 0.1rem solid rgb(174, 43, 87);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    text-align: left;
+    margin: 0;
+    position: relative;
+}
+
+legend {
+    background-color: pink;
+    border: 1px solid #dcdcdc;
+    border-radius: 0.5rem;
+    padding: 10px 20px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+form input:hover {
+    background-color: rgb(215, 214, 214);
+}
+
+form input:focus {
+    background-color: white;
+}
+
+form input:active {
+    background-color: lavenderblush;
+}
+
+#sendbtn {
+    background: #20131a;
+    ;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-color: transparent;
+}
+
+.contact>.form {
+    margin: 5rem 15rem;
+}
+
+.page {
+    margin: 0;
+    padding: 0;
+}
+
+/*footer styling */
+footer {
+    width: 100%;
+    background-color: #221f1f;
+    text-align: center;
+}
+
+footer p {
+    color: white;
+    font-size: larger;
+}
+
+.buy-now-button {
+    background-color: #671114;
+    /* Desired button color */
+    color: white;
+    font-weight: bolder;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 10px;
+    margin-top: 2px;
+    margin-bottom: 8px;
+    width: 110px;
+}
+
+.buy-now-button:hover {
+    background-color: #b31f24;
+    /* Change color on hover */
+}
+
+.explore-button {
+    background-color: #671114;
+    /* Desired button color */
+    color: white;
+    font-weight: bolder;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 10px;
+    margin: 1rem 5rem;
+
+    width: 160px;
+    /* Adjust width as needed */
+}
+
+.explore-button:hover {
+    background-color: #b31f24;
+    /* Change color on hover */
+}

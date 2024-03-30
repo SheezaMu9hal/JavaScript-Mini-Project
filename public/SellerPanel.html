@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seller Panel</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #EFFFFB; /* Light blue */
+  }
+  h1 {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  input[type="text"],
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+
+  select {
+    appearance: none;
+  }
+
+  button {
+    background-color: #50D890; /* Green */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  button:hover {
+    background-color: #4F98CA; /* Blue */
+  }
+
+  .section {
+    display: none;
+    margin-top: 20px;
+  }
+
+  .section.active {
+    display: block;
+  }
+  .container {
+    background-color: #FFFFFF; /* White */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 600px;
+  }
+
+  .input-container {
+    margin-bottom: 15px;
+  }
+
+  input[type="text"],
+  input[type="file"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  .collection {
+    background-color: #FFFFFF; /* White */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+  }
+
+  .collection h2,
+  .product h3 {
+    margin-top: 0;
+  }
+
+  .product {
+    margin-top: 10px;
+  }
+  .btn {
+    margin-top: 20px;
+    margin-right: 20px;
+  }
+</style>
+</head>
+<body>
+  <h1>Seller Panel</h1>
+
+  <!-- Store type selector -->
+  <div class="input-container">
+    <label for="storeType">Select Store Type:</label>
+    <select id="storeType" name="storeType" onchange="showStoreTypeForm()">
+      <option value="">Select Store Type</option>
+      <option value="apparel">Apparel Stores</option>
+      <option value="shoe">Shoe Stores</option>
+      <option value="jewelry">Jewelry Stores</option>
+      <option value="cosmetics">Cosmetics and Beauty Stores</option>
+      <option value="electronics">Electronics Stores</option>
+      <option value="home">Home Goods Stores</option>
+    </select>
+  </div>
+
+  <!-- Form sections for different store types -->
+  <div id="formSectionsContainer">
+    <!-- Forms will be dynamically generated here -->
+  </div>
+
+  <button id="submitBtn">Submit</button>
+
+  <script>
+    function showStoreTypeForm() {
+      // Hide all store type forms
+      document.querySelectorAll('.section').forEach((section) => {
+        section.classList.remove('active');
+      });
+
+      // Get selected store type
+      const storeType = document.getElementById('storeType').value;
+
+      // Show the form section corresponding to the selected store type
+      document.getElementById('formSectionsContainer').innerHTML = "";
+      generateStoreForm(storeType);
+    }
+
+    // Function to generate store type forms dynamically
+    function generateStoreForm(storeType) {
+      // Create form fields based on store type
+      const storeForm = `
+        <div class="container">
+          <h1>${capitalizeFirstLetter(storeType)} Store Form</h1>
+
+          <!-- Name of ${capitalizeFirstLetter(storeType)} brand -->
+          <div class="input-container">
+            <label for="${storeType}BrandName">Name of ${capitalizeFirstLetter(storeType)} Brand:</label>
+            <input type="text" id="${storeType}BrandName" name="${storeType}BrandName" placeholder="Enter ${capitalizeFirstLetter(storeType)} Brand Name">
+          </div>
+
+          <!-- Slogan of your brand -->
+          <div class="input-container">
+            <label for="${storeType}BrandSlogan">Slogan of Your Brand:</label>
+            <input type="text" id="${storeType}BrandSlogan" name="${storeType}BrandSlogan" placeholder="Enter Brand Slogan">
+          </div>
+
+          <!-- Logo image of your brand -->
+          <div class="input-container">
+            <label for="${storeType}BrandLogo">Logo Image of Your Brand:</label>
+            <input type="file" id="${storeType}BrandLogo" name="${storeType}BrandLogo">
+          </div>
+
+          <!-- Main image of your brand page -->
+          <div class="input-container">
+            <label for="${storeType}BrandMainImage">Main Image of Your Brand Page:</label>
+            <input type="file" id="${storeType}BrandMainImage" name="${storeType}BrandMainImage">
+          </div>
+
+          <!-- Tell Something About Your Brand -->
+          <div class="input-container">
+            <label for="${storeType}BrandDescription">Tell Something About Your Brand (Up to 50 Words):</label>
+            <textarea id="${storeType}BrandDescription" name="${storeType}BrandDescription" maxlength="500" placeholder="Tell about your brand..."></textarea>
+          </div>
+
+          <!-- Add Your Collections -->
+          <div id="collectionsContainer">
+            <!-- Collection 1 -->
+            <div class="collection" id="collection1">
+              <h2>Collection 1</h2>
+              <!-- Collection name -->
+              <div class="input-container">
+                <label for="collectionName1">Name:</label>
+                <input type="text" id="collectionName1" name="collectionName1" placeholder="Enter Collection Name">
+              </div>
+              <!-- Product container -->
+              <div id="products1">
+                <!-- Product 1 -->
+                <div class="product" id="product1-1">
+                  <h3>Product 1</h3>
+                  <!-- Product image -->
+                  <div class="input-container">
+                    <label for="productImage1-1">Image:</label>
+                    <input type="file" id="productImage1-1" name="productImage1-1">
+                  </div>
+                  <!-- Product name -->
+                  <div class="input-container">
+                    <label for="productName1-1">Name:</label>
+                    <input type="text" id="productName1-1" name="productName1-1" placeholder="Enter Product Name">
+                  </div>
+                  <!-- Product price -->
+                  <div class="input-container">
+                    <label for="productPrice1-1">Price:</label>
+                    <input type="text" id="productPrice1-1" name="productPrice1-1" placeholder="Enter Product Price">
+                  </div>
+                </div>
+              </div>
+              <!-- Add products button -->
+              <button onclick="addProductForm(1)">Add Product</button>
+            </div>
+          </div>
+
+          <!-- Add Collection button -->
+          <button class="btn" onclick="addCollection()">Add Collection</button>
+
+          <!-- Submit button -->
+          <button class="btn" onclick="submitForm()">Submit</button>
+        </div>
+      `;
+
+      // Append the form fields to the formSectionsContainer div
+      document.getElementById('formSectionsContainer').innerHTML = storeForm;
+    }
+
+    // Function to capitalize the first letter of a string
+    function capitalizeFirstLetter(string) {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
+    let collectionCount = 1;
+
+    function addCollection() {
+      if (collectionCount < 5) {
+        collectionCount++;
+        const collectionsContainer = document.getElementById('collectionsContainer');
+        const newCollection = document.createElement('div');
+        newCollection.classList.add('collection');
+        newCollection.id = `collection${collectionCount}`;
+        newCollection.innerHTML = `
+          <h2>Collection ${collectionCount}</h2>
+          <!-- Collection name -->
+          <div class="input-container">
+            <label for="collectionName${collectionCount}">Name:</label>
+            <input type="text" id="collectionName${collectionCount}" name="collectionName${collectionCount}" placeholder="Enter Collection Name">
+          </div>
+          <!-- Product container -->
+          <div id="products${collectionCount}">
+          </div>
+          <!-- Add products button -->
+          <button onclick="addProductForm(${collectionCount})">Add Product</button>
+        `;
+        collectionsContainer.appendChild(newCollection);
+      } else {
+        alert('You can only add up to 5 collections.');
+      }
+    }
+
+    function addProductForm(collectionNumber) {
+      const collection = document.getElementById(`products${collectionNumber}`);
+      const productCount = collection.querySelectorAll('.product').length + 1;
+      const newProduct = document.createElement('div');
+      newProduct.classList.add('product');
+      newProduct.id = `product${collectionNumber}-${productCount}`;
+      newProduct.innerHTML = `
+        <h3>Product ${productCount}</h3>
+        <!-- Product image -->
+        <div class="input-container">
+          <label for="productImage${collectionNumber}-${productCount}">Image:</label>
+          <input type="file" id="productImage${collectionNumber}-${productCount}" name="productImage${collectionNumber}-${productCount}">
+        </div>
+        <!-- Product name -->
+        <div class="input-container">
+          <label for="productName${collectionNumber}-${productCount}">Name:</label>
+          <input type="text" id="productName${collectionNumber}-${productCount}" name="productName${collectionNumber}-${productCount}" placeholder="Enter Product Name">
+        </div>
+        <!-- Product price -->
+        <div class="input-container">
+          <label for="productPrice${collectionNumber}-${productCount}">Price:</label>
+          <input type="text" id="productPrice${collectionNumber}-${productCount}" name="productPrice${collectionNumber}-${productCount}" placeholder="Enter Product Price">
+        </div>
+      `;
+      collection.appendChild(newProduct);
+    }
+  </script>
+   <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+   <script type="text/javascript" src="./js/firebase.js"></script>
+</body>
+</html>

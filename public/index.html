@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <style>
+    .navbar-main {
+      background-color: rgba(26, 11, 97, 0.872) !important;
+      color: rgb(252, 249, 249);
+      font-weight: 500;
+      max-height: 60px;
+      justify-content: center; /* Center the navbar content */
+    }
+
+    .navbar-sub {
+      display: flex;
+      justify-content: space-between; /* Place the logout button at the right corner */
+      align-items: center; /* Vertically center the navbar content */
+    }
+
+    .logo-container img {
+      max-width: 120px;
+      padding: 10px;
+      margin-left: 30px;
+      margin-right: 400px;
+    }
+
+    .navbar-nav .nav-link {
+      color: white;
+    }
+
+    .navbar-nav .nav-link:hover,.navbar-nav .nav-link.active:hover {
+      color: rgb(154, 188, 239); 
+    }
+
+    .nav-item.active .nav-link {
+      color: rgb(86, 143, 235); 
+    }
+    .navbar-nav .nav-link.active {
+      color: rgb(246, 246, 246); 
+    }
+
+    #logout-btn {
+  background-color: red; /* Remove background color */
+  border: none; /* Remove button border */
+  color: white; /* Set text color */
+  text-decoration: none; /* Remove default underline */
+}
+/* .slider-container {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    .slider img {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+    }
+    .slide {
+      flex: 0 0 auto;
+    }
+    .slide-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 1;
+}
+ */
+/* Add your CSS styles here */
+/* You can customize according to your design */
+/* .store-section {
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+}
+.store-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.collection {
+    margin-bottom: 20px;
+}
+.product {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.product img {
+    max-width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+} */
+/* Styles for store header */
+.store-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.store-header img {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+.store-info {
+    flex-grow: 1;
+}
+
+/* Styles for store body */
+.store-body {
+    display: flex;
+}
+
+.store-body img {
+    flex-grow: 1;
+    max-width: 400px;
+    height: auto;
+    margin-left: 20px;
+}
+
+/* Styles for collections container */
+.collections-container {
+    margin-top: 20px;
+}
+
+/* Styles for each collection */
+.collection {
+    background-color: #FFFFFF;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+/* Styles for collection heading */
+.collection h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/* Styles for individual product */
+.product {
+    display: inline-block;
+    width: calc(30% - 20px);
+    margin: 20px 10px;
+    vertical-align: top;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Adjustments for product image */
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Adjustments for product name */
+.product h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+/* Adjustments for product price */
+.product p {
+    margin-bottom: 10px;
+}
+
+/* Adjustments for buy button */
+.product button {
+    padding: 8px 16px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.product button:hover {
+    background-color: #555;
+}
+
+
+  </style>
+
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-main">
+    <div class="container-fluid">
+      <div class="logo-container">
+        <a href="../FirstPage.html">
+          <img src="./images/saylanilogo.png" id="brandlogo" alt="Logo">
+        </a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse navbar-sub" id="navbarNavDropdown">
+        <ul class="navbar-nav justify-content-center"> <!-- Center the navbar links -->
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a> 
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Stores
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Shoes Stores</a></li>
+              <li><a class="dropdown-item" href="#">Apparel Stores</a></li>
+              <li><a class="dropdown-item" href="#">Furniture Stores</a></li>
+              <li><a class="dropdown-item" href="#">Cosmetics and Beauty Stores</a></li>
+              <li><a class="dropdown-item" href="#">Electronics Stores</a></li>
+              <li><a class="dropdown-item" href="#">Home Good Stores</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Brands</a> 
+          </li>
+        </ul>
+
+        <a id="logout-btn" class="btn btn-danger" href="./pages/UserSignIn.html" onclick="signOut();">Log Out</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- <div class="slider-container">
+    <div class="slider">
+      <div class="slide">
+        <img src="../public/images/userImage.jpg" alt="Shoes Stores">
+        <div class="slide-content">Experience a world of endless choices with Saylani Online Shopping. Your one-stop destination for all your shopping needs!</div>
+      </div>
+      <div class="slide">
+        <img src="../public/images/userImage.jpg" alt="Apparel Stores">
+        <div class="slide-content">Indulge in a shopping spree like never before! Explore Saylani's vast array of products and uncover hidden gems waiting just for you.</div>
+      </div>
+      <div class="slide">
+        <img src="../public/images/userImage.jpg" alt="Furniture Stores">
+        <div class="slide-content">Join the revolution of convenient shopping with Saylani. From fashion to electronics, find everything you desire at your fingertips.</div>
+      </div>
+      <div class="slide">
+        <img src="../public/images/userImage.jpg" alt="Cosmetics and Beauty Stores">
+        <div class="slide-content">Elevate your shopping experience with Saylani – where quality meets affordability. Discover unbeatable deals and exclusive offers today!</div>
+      </div>
+      <div class="slide">
+        <img src="../public/images/userImage.jpg" alt="Electronics Stores">
+        <div class="slide-content">Why settle for ordinary when you can have extraordinary? Saylani Online Shopping brings you the finest selection of products, curated just for you.</div>
+      </div>
+      <div class="slide">
+        <img src="../public/images/userImage.jpg" alt="Home Good Stores">
+        <div class="slide-content">Step into a world of endless possibilities with Saylani. Uncover the latest trends, timeless classics, and everything in between, all in one place.</div>
+      </div>
+    </div>
+  </div> -->
+ 
+  <div id="app">
+    <!-- Store sections will be dynamically added here -->
+</div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var dropdownToggleList = document.querySelectorAll('[data-bs-toggle="dropdown"]');
+      dropdownToggleList.forEach(function(dropdownToggle) {
+        dropdownToggle.addEventListener("click", function(event) {
+          event.preventDefault();
+          var dropdownMenu = dropdownToggle.nextElementSibling;
+          if (!dropdownMenu.classList.contains('show')) {
+            dropdownMenu.classList.add('show');
+          } else {
+            dropdownMenu.classList.remove('show');
+          }
+        });
+      });
+    });
+    // document.addEventListener("DOMContentLoaded", function() {
+    //   const slider = document.querySelector('.slider');
+    //   const slides = document.querySelectorAll('.slide');
+    //   const imageWidth = window.innerWidth;
+
+    //   let counter = 0;
+    //   let interval;
+
+    //   function slideNext() {
+    //     counter++;
+    //     if (counter === slides.length) {
+    //       counter = 0;
+    //     }
+    //     slider.style.transform = `translateX(-${counter * imageWidth}px)`;
+    //   }
+
+    //   interval = setInterval(slideNext, 2000);
+
+    //   // Pause slider on hover
+    //   slider.addEventListener('mouseenter', () => {
+    //     clearInterval(interval);
+    //   });
+
+    //   // Resume slider on mouse leave
+    //   slider.addEventListener('mouseleave', () => {
+    //     interval = setInterval(slideNext, 2000);
+    //   });
+    // });
+
+    // Fetch and display store collections
+// Fetch and display store collections
+function fetchAndDisplayStoreCollections() {
+    console.log("Fetching store collections...");
+    const storeRef = firebase.database().ref('sellers');
+    storeRef.once('value', function(snapshot) {
+        console.log("Data fetched successfully.");
+        const allStores = snapshot.val();
+        console.log("All stores:", allStores);
+
+        // Iterate through each store
+        for (const userId in allStores) {
+            const userData = allStores[userId];
+            for (const key in userData) {
+                if (typeof userData[key] === 'object') {
+                    for (const storeType in userData[key]) {
+                        const storeData = userData[key][storeType];
+                        console.log(`Creating section for ${storeType} - ${userId}`);
+
+                        // Create a section for the store type
+                        const section = document.createElement('section');
+                        section.id = `${storeType.toLowerCase()}-${userId}`;
+                        section.className = 'store-section';
+                        section.innerHTML = `
+                            <div class="store-header">
+                                <div class="store-info">
+                                    <h2>${storeType}</h2> <!-- Display store type -->
+                                </div>
+                            </div>
+                            <div class="store-body">
+                                <div class="collections-container" id="collections-${storeType.toLowerCase()}-${userId}">
+                                    <!-- Store collections will be displayed here -->
+                                </div>
+                            </div>
+                        `;
+
+                        // Iterate through collections
+                        const collectionsContainer = section.querySelector(`#collections-${storeType.toLowerCase()}-${userId}`);
+                        const collections = storeData.collections;
+                        for (const collectionName in collections) {
+                            const collectionDiv = document.createElement('div');
+                            collectionDiv.className = 'collection';
+
+                            // Iterate through products in the collection
+                            const products = collections[collectionName];
+                            for (const productId in products) {
+                                // Get product details
+                                const product = products[productId];
+                                const productName = product.name;
+                                const productPrice = product.price;
+
+                                // Create a div for each product
+                                const productDiv = document.createElement('div');
+                                productDiv.className = 'product';
+                                productDiv.innerHTML = `
+                                    <h4>${storeType}</h4> <!-- Display store type -->
+                                    <img src="${product.imageURL}" alt="${productName}">
+                                    <h3>${productName}</h3>
+                                    <p>Price: ${productPrice}</p>
+                                    <button onclick="buyProduct('${productName}')">Buy Now</button>
+                                `;
+                                collectionDiv.appendChild(productDiv);
+                            }
+
+                            // Add the collection div to collections container
+                            collectionsContainer.appendChild(collectionDiv);
+                        }
+
+                        // Add the section to the main container
+                        document.getElementById('app').appendChild(section);
+                        console.log(`Section for ${storeType} - ${userId} appended to DOM`);
+                    }
+                }
+            }
+        }
+    });
+}
+
+// Call the fetch function when the page loads
+window.onload = function() {
+    fetchAndDisplayStoreCollections();
+};
+
+// Function to simulate buying the product
+function buyProduct(productName) {
+    alert(`You have bought ${productName}`);
+}
+
+// Fetch and display store collections
+function fetchAndDisplayStoreCollections() {
+    console.log("Fetching store collections...");
+    const storeRef = firebase.database().ref('sellers');
+    storeRef.once('value', function(snapshot) {
+        console.log("Data fetched successfully.");
+        const allStores = snapshot.val();
+        console.log("All stores:", allStores);
+
+        // Iterate through each store
+        for (const userId in allStores) {
+            const userData = allStores[userId];
+            for (const key in userData) {
+                if (typeof userData[key] === 'object') {
+                    for (const storeType in userData[key]) {
+                        const storeData = userData[key][storeType];
+                        console.log(`Creating section for ${storeType} - ${userId}`);
+
+                        // Create a section for the store type
+                        const section = document.createElement('section');
+                        section.id = `${storeType.toLowerCase()}-${userId}`;
+                        section.className = 'store-section';
+                        section.innerHTML = `
+                            <div class="store-header">
+                                <div class="store-info">
+                                    <h2>${storeType}</h2> <!-- Display store type -->
+                                </div>
+                            </div>
+                            <div class="store-body">
+                                <div class="collections-container" id="collections-${storeType.toLowerCase()}-${userId}">
+                                    <!-- Store collections will be displayed here -->
+                                </div>
+                            </div>
+                        `;
+
+                        // Iterate through collections
+                        const collectionsContainer = section.querySelector(`#collections-${storeType.toLowerCase()}-${userId}`);
+                        const collections = storeData.collections;
+                        for (const collectionName in collections) {
+                            const collectionDiv = document.createElement('div');
+                            collectionDiv.className = 'collection';
+
+                            // Iterate through products in the collection
+                            const products = collections[collectionName];
+                            for (const productId in products) {
+                                // Get product details
+                                const product = products[productId];
+                                const productName = product.name;
+                                const productPrice = product.price;
+
+                                // Create a div for each product
+                                const productDiv = document.createElement('div');
+                                productDiv.className = 'product';
+                                productDiv.innerHTML = `
+                                    <h4>${storeType}</h4> <!-- Display store type -->
+                                    <img src="${product.imageURL}" alt="${productName}">
+                                    <h3>${productName}</h3>
+                                    <p>Price: ${productPrice}</p>
+                                    <button onclick="buyProduct('${productName}')">Buy Now</button>
+                                `;
+                                collectionDiv.appendChild(productDiv);
+                            }
+
+                            // Add the collection div to collections container
+                            collectionsContainer.appendChild(collectionDiv);
+                        }
+
+                        // Add the section to the main container
+                        document.getElementById('app').appendChild(section);
+                        console.log(`Section for ${storeType} - ${userId} appended to DOM`);
+                    }
+                }
+            }
+        }
+    });
+}
+
+// Call the fetch function when the page loads
+window.onload = function() {
+    fetchAndDisplayStoreCollections();
+};
+
+// Function to simulate buying the product
+function buyProduct(productName) {
+    alert(`You have bought ${productName}`);
+}
+
+
+
+
+  </script>
+
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+
+<script type="text/javascript" src="./js/firebase.js"></script>
+<script type="text/javascript" src="./js/protected.js"></script>
+</body>
+
+</html>

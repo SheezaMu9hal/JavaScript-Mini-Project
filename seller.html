@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>seller Data</title>
+    <style>
+        
+@font-face {
+    font-family: 'dancingscript';
+    src: url('./Dancing_Script/DancingScript-VariableFont_wght.ttf');
+}
+*{
+    font-family: 'Times New Roman', Times, serif;
+}
+    /*NAVIGATION BAR*/
+.topbar{
+    background-color: pink;
+    padding: 0rem 5rem;
+    justify-content: space-between;
+    display: flex;
+    width: 92%;
+    margin: 0;
+    top: 0px;
+   left: 0px;
+z-index: 10;
+position: fixed;
+    
+}
+.topbar ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    float: right;
+}
+.topbar li{
+    display: inline-block;
+    font-size: 1.3rem;
+    color:  rgb(174, 43, 87);
+}
+.topbar li a{
+    text-decoration: none;
+    color:  rgb(174, 43, 87);
+    margin: 0px 15px 0px 15px;
+}
+.topbar a:hover{
+    background-color:  white;
+    padding: 1.35rem 1rem;
+}
+.dropdown {
+    display: inline-block;
+    position: relative;
+    color: white;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+    padding: 0rem 0.5rem;
+    background-color: pink;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .dropdown-content a {
+    display: block;
+    color:  rgb(174, 43, 87);
+    text-decoration: none;
+    padding: 0.5rem 0rem;
+    font-size: large;
+  }
+  .dropdown-content a:hover {
+    background-color: white;
+    padding: 0.3rem ;
+  }
+
+#navheading{
+    float: left;
+    color:  rgb(174, 43, 87);
+    font-size: 1.8rem;
+    margin: 0.75rem;
+    padding: 0;
+    font-family: 'dancingscript';
+}
+/*HOME*/
+.picture{
+    background-image: url(./images/MicrosoftTeams-image-26.webp);
+    background-repeat: no-repeat;
+    margin: 0;
+    background-size: cover;
+}
+.picture >.overlay {
+   height: 600px;
+    width: 100%;
+    object-fit: cover;
+    margin: 0;
+}
+.overlay h1{
+    color:  rgb(174, 43, 87);
+    text-align: center;
+    font-size: 80px;
+    margin: 0;
+    padding-top: 250px;
+    font-family: 'dancingscript';
+}
+.overlay p{
+    color:  rgb(174, 43, 87);
+    text-align: center;
+    font-size: 32px;
+    margin: 1rem;
+    padding: 0%;
+    font-family: 'Times New Roman', Times, serif;
+}
+/*FEATURES*/
+.features > .container{
+    padding: 0;
+    margin: 1rem;
+    border: none;
+    overflow: auto;
+color:  rgb(174, 43, 87);
+text-align: center;
+}
+.row{
+    display: flex;
+    margin: 4rem 0rem;
+    justify-content: center;
+}
+.col{
+    padding: 0;
+    margin: 0 3rem;
+    display: block;
+}
+.col > .content{
+    border: 0.3rem solid  rgb(174, 43, 87);
+    padding: 1.5rem;
+    color: black;
+}
+.col > .icon{
+    padding: 1rem;
+}
+.features h1{
+    font-size: 2.7rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+/*PRODUCTS*/
+.container{
+    padding: 0;
+    margin: 1rem;
+    border: 0.1rem solid  rgb(174, 43, 87);
+    overflow: auto;
+color: black;
+
+}
+.row1,.row2{
+    display: flex;
+    margin: 4rem 0rem;
+    justify-content: center;
+}
+
+.row1 img,.row2 img{
+    height: 12rem;
+    width: 15rem;
+    padding: 0%;
+    margin: 0%;
+}
+.col1,.col2,.col3 > .image_container{
+    padding: 0;
+    margin: 0;
+}
+.col1,.col2,.col3{
+    padding: 0;
+    margin: 0 3rem;
+    display: block;
+    border: 0.3rem solid  rgb(174, 43, 87);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+      text-align: center;
+}
+.col1 > .content,.col2 > .content,.col3 > .content{
+    padding-bottom: 1rem;
+}
+.col1 > .content button ,.col2 > .content button,.col3 > .content button{
+    background: linear-gradient(to left bottom,rgb(203, 93, 153) 20% ,  rgb(174, 43, 87) 100%);
+    border-color: transparent;
+    color: white;
+    padding: 0.5rem;
+}
+.pendant > .container h2,.ring > .container h2,.earrings > .container h2{
+    text-align: center;
+    padding-top: 2rem;
+    color:  rgb(174, 43, 87);
+    font-family: 'dancingscript';
+    font-size: xx-large;
+}
+/*ABOUT US*/
+.about{
+    display:flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-evenly;
+}
+.about_content{
+    margin: 0;
+    padding: 4rem 2rem;
+    justify-content: center;
+    background-image: url(./images/aboutcontent.png);
+    height: 31.3rem;
+    position: relative;
+    color: white;
+}
+.about_content h4{
+    font-size: xx-large;
+    margin-top: 7.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.about_content p{
+    font-size: larger;
+   
+}
+.about > .image_container {
+margin: 0;
+padding: 0;
+}
+.about > .image_container img{
+    height: auto;
+}
+/*CONTACT*/
+.contact{
+    padding: 2rem;
+
+}
+.contact h3{
+    text-align: center;
+    color: black;
+    font-size: xx-large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.contact p{
+    text-align: center;
+    font-size: large;
+}
+fieldset {
+    width: 10rem;
+    height: 18rem;
+    border: 0.1rem solid  rgb(174, 43, 87);
+    border-radius:  0.5rem;
+    padding: 2rem;
+    text-align: left;
+    margin:0;
+    position: relative;
+}
+ legend {
+    background-color: pink;
+    border: 1px solid #dcdcdc;
+    border-radius:  0.5rem;
+    padding: 10px 20px;
+    text-align: left;
+    text-transform: uppercase;}
+form input:hover{
+background-color: rgb(215, 214, 214);
+}
+form input:focus{
+background-color: white;
+}
+form input:active{
+background-color: lavenderblush;
+}
+#sendbtn{
+     background : pink;
+     border-radius: 0.5rem;
+     padding: 0.5rem 1rem;
+     border-color: transparent;
+ }
+.contact > .form{
+    margin: 0rem 25rem;
+}
+.page{
+   margin: 0;
+padding: 0;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+        .btn {
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .btn-primary {
+            background-color: #6B9DB3;
+            border-color: #6B9DB3;
+        }
+
+        .btn-primary:hover {
+            background-color: #5a6268;
+            border-color: #545b62;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header section -->
+    <header class="topbar">
+        <div id="navheading">Radiant Gems...</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#About">About</a></li>
+            <li><a href="#Collections">Features</a></li>
+            <li><a href="#Contact">Contact</a></li>
+            <button type="submit" class="btn btn-primary" onclick="signOut();">Sign Out</button>
+        </ul>
+    </header>
+    <section class="page">
+        <div id="home" class="picture">
+            <div class="overlay">
+                <h1 id="brandName"></h1>
+                <p id="brandSlogan"></p>
+            </div>
+        </div>
+       
+        < <!--Features-->
+        <section id="Features" class="features">
+            <section class="container">
+                <h1>Our Features</h1>
+                <div class="row">
+                    <div class="col">
+                        <div class="icon"><i class="fa-solid fa-heart fa-2xl" style="color: #ce0d61;"></i></div>
+                        <div class="content">
+                            <h2>Money Back</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu libero scelerisque
+                                ligula sagittis faucibus eget quis lacus.</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="icon"><i class="fa-solid fa-gift fa-2xl" style="color: #ce0d61;"></i></div>
+                        <div class="content">
+                            <h2>Gift Coupon</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu libero scelerisque
+                                ligula sagittis faucibus eget quis lacus.</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="icon"><i class="fa-solid fa-truck-fast fa-2xl" style="color: #ce0d61;"></i></div>
+                        <div class="content">
+                            <h2>Free Shipping</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu libero scelerisque
+                                ligula sagittis faucibus eget quis lacus.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+
+
+        <!--About Us-->
+        <section class="aboutus" id="About">
+            <div class="About">
+                <h2 id="brandName">About Us</h2>
+                <p id="brandDescription"></p>
+            </div>
+            <img src="./images/about.jpg" alt="about">
+        </section>
+        <!--Contact Us-->
+        <section id="Contact" class="contact">
+            <h3>CONTACT US</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id similique ipsum suscipit totam libero
+                repellendus magnam,
+                alias dignissimos officiis ad nihil quod cumque nam neque consequuntur?
+                Debitis, illo voluptas! Autem?<br>You can contact us on email or Tel No. (+001) 123-456-789</p>
+            <div class="form">
+                <fieldset>
+                    <legend>Email Us</legend>
+                    <form action="">
+                        <input type="text" id="name" placeholder="Your Name...."> <br><br>
+                        <input type="email" id="email" placeholder="Your Email...."><br><br>
+                        <textarea id="comments" name="comments" rows="7" cols="80">Your Message...</textarea><br><br>
+                        <input type="submit" id="sendbtn" value="Send Us" name="send">
+                    </form>
+                </fieldset>
+            </div>
+
+
+
+
+
+
+
+
+
+
+            <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+            <script src="./js/firebase.js"></script>
+            <script>
+
+
+                function displayStoreDetails(storeData, storeType, brandName) {
+                    if (storeData && storeData[storeType] && storeData[storeType][brandName]) {
+                        console.log("Received store data:", storeData);
+
+                        const brandData = storeData[storeType][brandName];
+                        document.getElementById('brandLogo').src = brandData.logoURL;
+                        document.getElementById('brandName').textContent = brandData.name;
+                        document.getElementById('brandSlogan').textContent = brandData.slogan;
+                        document.getElementById('brandDescription').textContent = brandData.description;
+                        document.getElementById('brandMainImage').src = brandData.mainImageURL;
+                        document.getElementById('email').src = storeData.email;
+
+                        const storeDetailsContainer = document.getElementById("storeDetails");
+                        storeDetailsContainer.innerHTML = ""; // Clear previous content
+
+                        const collections = brandData.collections;
+                        if (Array.isArray(collections)) {
+                            collections.forEach(collection => {
+                                const collectionDiv = document.createElement('div');
+                                collectionDiv.classList.add('collection');
+                                collectionDiv.innerHTML = `<h2>${collection.name}</h2>`;
+
+                                // Check if products exist directly under the collection
+                                if (collection && typeof collection === 'object') {
+                                    Object.values(collection).forEach(product => {
+                                        const productDiv = document.createElement('div');
+                                        productDiv.classList.add('product');
+                                        productDiv.innerHTML = `
+                            <img src="${product.imageURL}" alt="${product.name}">
+                            <h3>${product.name}</h3>
+                            <p>Price: ${product.price}</p>
+                            <button onclick="buyProduct('${product.name}')">Buy Now</button>
+                        `;
+                                        collectionDiv.appendChild(productDiv);
+                                    });
+                                } else {
+                                    console.error("No products data available for collection:", collection);
+                                }
+
+                                storeDetailsContainer.appendChild(collectionDiv);
+                            });
+                        } else {
+                            console.error("No collections data available for brand:", brandName);
+                        }
+                    } else {
+                        console.error("No store data available or invalid data structure.");
+                    }
+                }
+
+                // Function to simulate buying the product
+                function buyProduct(productName) {
+                    alert(`You have bought ${productName}`);
+                }
+
+
+            </script>
+</body>
+
+</html>
