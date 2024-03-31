@@ -72,6 +72,7 @@ function writeSellerData(sellerId, name, email) {
     console.error('Error writing seller data:', error);
   });
 }
+
 function submitForm() {
   var storeType = document.getElementById('storeType').value;
   var brandName = document.getElementById(`${storeType}BrandName`).value;
@@ -181,7 +182,6 @@ function signInSeller() {
 
   auth.signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
-      // Sign-in successful
       const user = userCredential.user;
       console.log("Sign-in successful for user:", user.uid);
       window.location.href = '../SellerData.html';
@@ -194,31 +194,26 @@ function signInSeller() {
 }
 
 function fetchStoreData() {
-  // Get the authenticated user
   const user = firebase.auth().currentUser;
 
   if (user) {
       const userUID = user.uid;
 
-      // Query the database to find user's data based on UID
       const userRef = firebase.database().ref('sellers').child(userUID);
       userRef.once('value', function (snapshot) {
           const storeData = snapshot.val();
 
-          // Display store data
           console.log("Fetched store data:", storeData);
 
-          // Extract store type and brand name dynamically
-          let storeType = Object.keys(storeData)[0]; // Get the first key (store type)
+          let storeType = Object.keys(storeData)[0]; 
           if(storeType === "email"){
             storeType = Object.keys(storeData)[1];
             if(storeType === "name"){
               storeType = Object.keys(storeData)[2];
             }
           }
-          const brandName = Object.keys(storeData[storeType])[0]; // Get the first key (brand name)
+          const brandName = Object.keys(storeData[storeType])[0]; 
           console.log(brandName,storeType);
-          // Call the displayStoreDetails function with extracted store type and brand name
           displayStoreDetails(storeData, storeType, brandName);
       });
   } else {
@@ -226,17 +221,14 @@ function fetchStoreData() {
   }
 }
 
-
-// Listen for authentication state changes
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
-      // User is signed in
       fetchStoreData();
   } else {
-      // No user is signed in
       console.log("No user is signed in.");
   }
 });
+
 
 
 // Function to sign up users
@@ -247,20 +239,15 @@ firebase.auth().onAuthStateChanged(function (user) {
     
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .then(function (userCredential) {
-      // User signed up successfully
       var user = userCredential.user;
-      // Write user data to the database
       writeUserData(user.uid, name, email);
       console.log(user);
-      // Store user email in session storage
       sessionStorage.setItem('email', user.email);
-      // Redirect to index.html
-      window.location.href = '../index.html';
+      window.location.href = '../UserPanel.html';
     })
     .catch(function (error) {
       var errorCode = error.code;
       var errorMessage = error.message;
-      // Handle errors
       console.error(errorMessage);
     });
   }
@@ -287,11 +274,9 @@ firebase.auth().onAuthStateChanged(function (user) {
           auth.signInWithEmailAndPassword(email, password)
           .then((userCredential) => {
             const user = userCredential.user;
-            // Check if the signed-in user is a regular user
-            // Redirect or perform actions specific to regular users
             console.log("Signed in user: ", user);
             sessionStorage.setItem('email', user.email);
-            window.location.href = '../index.html';
+            window.location.href = '../UserPanel.html';
           })
           .catch((error) => {
             const errorCode = error.code;

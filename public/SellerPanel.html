@@ -5,20 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Seller Panel</title>
 <style>
+  
+@font-face {
+    font-family: 'dancingscript';
+    src: url('./Dancing_Script/DancingScript-VariableFont_wght.ttf');
+}
+
   body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #EFFFFB; /* Light blue */
+    background-color:  rgba(198, 231, 245, 0.5); /* Light blue */
   }
   h1 {
     text-align: center;
     margin-top: 20px;
+    font-family: dancingscript;
+    
   }
-
+ 
   input[type="text"],
   select {
-    width: 100%;
+    width: 50%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -29,9 +37,12 @@
   select {
     appearance: none;
   }
-
+  .logo {
+    margin-bottom: 30px;
+}
   button {
-    background-color: #50D890; /* Green */
+    background-color: #50D890; 
+    margin-left: 50px;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -39,7 +50,9 @@
     border-radius: 5px;
     font-size: 16px;
   }
-
+#box{
+  text-align: center;
+}
   button:hover {
     background-color: #4F98CA; /* Blue */
   }
@@ -58,7 +71,7 @@
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin: 20px auto;
-    max-width: 600px;
+    max-width: 800px;
   }
 
   .input-container {
@@ -73,6 +86,7 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
+    margin-top: 10px;
   }
 
   textarea {
@@ -102,10 +116,14 @@
 </style>
 </head>
 <body>
+  <center>
+  <div class="logo">
+    <img src="./images/saylanilogo.png" width="20%">
+</div></center>
   <h1>Seller Panel</h1>
 
   <!-- Store type selector -->
-  <div class="input-container">
+  <div class="input-container" id="box">
     <label for="storeType">Select Store Type:</label>
     <select id="storeType" name="storeType" onchange="showStoreTypeForm()">
       <option value="">Select Store Type</option>
@@ -123,9 +141,12 @@
     <!-- Forms will be dynamically generated here -->
   </div>
 
-  <button id="submitBtn">Submit</button>
 
   <script>
+
+
+
+
     function showStoreTypeForm() {
       // Hide all store type forms
       document.querySelectorAll('.section').forEach((section) => {

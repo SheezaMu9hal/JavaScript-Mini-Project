@@ -1,3 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+@font-face {
+    font-family: 'dancingscript';
+    src: url('./Dancing_Script/DancingScript-VariableFont_wght.ttf');
+}
+
 
 body {
     margin: 0;
@@ -6,6 +19,8 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
+    font-family: Arial, sans-serif;
+    background-color: #fdfafa;
 }
 
 .container {
@@ -13,7 +28,7 @@ body {
 }
 
 .logo {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .box {
@@ -43,7 +58,6 @@ body {
 }
 
 .inputbox input:focus {
-    outline: none;
     border-color: #007bff;
 }
 
@@ -65,31 +79,6 @@ body {
 p {
     margin-top: 20px;
     color: #333;
-}
-
-
-@font-face {
-    font-family: 'dancingscript';
-    src: url('./Dancing_Script/DancingScript-VariableFont_wght.ttf');
-}
-
-* {
-    font-family: 'Times New Roman', Times, serif;
-}
-
-
-
-
-/* Reset some default styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
 }
 
 header {
@@ -139,16 +128,15 @@ nav {
 
 .logo-container img {
     max-width: 150px;
-    /* Adjust logo size as needed */
     height: auto;
 }
+
 
 main {
     padding: 80px;
 }
 
 #brandName {
-    /* float: left; */
     color: rgb(23, 12, 15);
     font-size: 2rem;
     margin: 1rem 5rem;
@@ -205,13 +193,7 @@ main {
     margin-bottom: 30px;
 }
 
-/* .product {
-    width: 200px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-} */
+
 .product {
     display: inline-block;
     width: calc(30% - 20px);
@@ -223,39 +205,29 @@ main {
     padding: 10px;
     background-color: #fff;
     text-align: center;
-    /* Center the content horizontally */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 
     /* box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; */
 }
 
-/* Add left margin to the first product in each row */
 .product:nth-child(3n - 2) {
     margin-left: 20px;
 }
 
-/* Add right margin to the third product in each row */
 .product:nth-child(3n) {
     margin-right: 20px;
 }
 
-
-/* Clear the float every third product */
 .product:nth-child(3n + 1) {
     clear: none;
-    /* Clear float removed */
 }
 
 
 .product img {
     width: 200px;
-    /* Set a fixed width */
     height: 150px;
-    /* Set a fixed height */
     object-fit: cover;
-    /* Maintain aspect ratio and cover the entire space */
     border-radius: 5px;
-    /* Add rounded corners for aesthetics */
 }
 
 .collection h2 {
@@ -329,7 +301,10 @@ button:hover {
 .collection h2 {
     margin-top: 0;
 }
+.features{
+    border-top:2px solid #510d0f;
 
+}
 .features>.container {
     padding: 0;
     margin: 1rem;
@@ -421,7 +396,7 @@ button:hover {
 fieldset {
     width: 10rem;
     height: 18rem;
-    border: 0.1rem solid rgb(174, 43, 87);
+    border: 0.1rem solid rgb(34, 32, 33);
     border-radius: 0.5rem;
     padding: 2rem;
     text-align: left;
@@ -430,14 +405,17 @@ fieldset {
 }
 
 legend {
-    background-color: pink;
+    background-color: #625e61;
     border: 1px solid #dcdcdc;
+    color: white;
     border-radius: 0.5rem;
     padding: 10px 20px;
     text-align: left;
     text-transform: uppercase;
 }
-
+form input{
+    width: 300px;
+}
 form input:hover {
     background-color: rgb(215, 214, 214);
 }
@@ -451,11 +429,12 @@ form input:active {
 }
 
 #sendbtn {
-    background: #20131a;
-    ;
+    background: #403b3e;
+    color: white;
     border-radius: 0.5rem;
     padding: 0.5rem 1rem;
     border-color: transparent;
+    width: 20%;
 }
 
 .contact>.form {
@@ -467,21 +446,9 @@ form input:active {
     padding: 0;
 }
 
-/*footer styling */
-footer {
-    width: 100%;
-    background-color: #221f1f;
-    text-align: center;
-}
-
-footer p {
-    color: white;
-    font-size: larger;
-}
 
 .buy-now-button {
     background-color: #671114;
-    /* Desired button color */
     color: white;
     font-weight: bolder;
     padding: 10px 15px;
@@ -494,24 +461,32 @@ footer p {
 
 .buy-now-button:hover {
     background-color: #b31f24;
-    /* Change color on hover */
 }
 
 .explore-button {
     background-color: #671114;
-    /* Desired button color */
     color: white;
     font-weight: bolder;
     padding: 10px 15px;
     text-decoration: none;
     border-radius: 10px;
     margin: 1rem 5rem;
-
     width: 160px;
-    /* Adjust width as needed */
 }
 
 .explore-button:hover {
     background-color: #b31f24;
-    /* Change color on hover */
+}
+
+/*footer styling */
+footer {
+    width: 100%;
+    background-color: #221f1f;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+footer p {
+    color: white;
+    font-size: larger;
 }
